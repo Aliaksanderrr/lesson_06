@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">lesson_06</string>
+    <string name="login_hint">Login</string>
+    <string name="password_hint">Password</string>
+    <string name="register_button">Register</string>
+    <string name="login_button">Login</string>
+    <string name="message_login_enpty">Login is empty</string>
+    <string name="message_password_empty">Password is empty</string>
+</resources>
