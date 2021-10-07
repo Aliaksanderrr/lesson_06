@@ -2,5 +2,6 @@
 <resources>
     <dimen name="view_corner_radius">5dp</dimen>
     <dimen name="text_padding">10dp</dimen>
-    <dimen name="layout_padding">16dp</dimen>
+    <dimen name="view_margin">16dp</dimen>
+    <dimen name="root_layout_padding">@dimen/view_margin</dimen>
 </resources>

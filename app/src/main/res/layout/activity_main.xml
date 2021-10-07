@@ -1,86 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
     tools:context=".MainActivity">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="1"
-        android:orientation="vertical"
-        android:layout_gravity="center_vertical"
-        android:padding="@dimen/layout_padding">
+        android:padding="@dimen/root_layout_padding">
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.6">
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:scaleType="centerInside"
-                android:rotationX="-12"
-                android:rotationY="24"
-                android:src="@drawable/ic_baseline_settings_150"
-                android:layout_gravity="bottom |center_horizontal"/>
-        </FrameLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/view_margin"
+            android:rotationX="-12"
+            android:rotationY="24"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_baseline_settings_150"
+            app:layout_constraintBottom_toTopOf="@id/login_edit_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <EditText
             android:id="@+id/login_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/layout_padding"
-            android:padding="@dimen/text_padding"
+            android:layout_marginTop="@dimen/view_margin"
+            android:autofillHints="username"
             android:background="@drawable/view_background"
-            android:inputType="textPersonName"
             android:hint="@string/login_hint"
-            android:autofillHints="username"/>
+            android:inputType="textPersonName"
+            android:padding="@dimen/text_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/password_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/layout_padding"
-            android:padding="@dimen/text_padding"
+            android:layout_marginTop="@dimen/view_margin"
+            android:autofillHints="password"
             android:background="@drawable/view_background"
             android:hint="@string/password_hint"
             android:inputType="textPassword"
-            android:autofillHints="password"/>
+            android:padding="@dimen/text_padding"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/login_edit_text" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/register_button"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="0.4"
-            android:layout_marginTop="@dimen/layout_padding"
-            android:orientation="horizontal"
-            android:gravity="bottom">
+            android:layout_marginEnd="@dimen/view_margin"
+            android:text="@string/register_button"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/login_button"
+            app:layout_constraintStart_toStartOf="parent" />
 
-            <Button
-                android:id="@+id/register_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:text="@string/register_button"
-                android:textAllCaps="false"/>
+        <Button
+            android:id="@+id/login_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/login_button"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/register_button" />
 
-            <View
-                android:layout_width="@dimen/layout_padding"
-                android:layout_height="match_parent"/>
-
-            <Button
-                android:id="@+id/login_button"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.5"
-                android:text="@string/login_button"
-                android:textAllCaps="false"/>
-        </LinearLayout>
-
-    </LinearLayout>
-
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

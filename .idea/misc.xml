@@ -6,11 +6,12 @@
         <entry key="..\:/programming/Java/lesson_06/app/src/main/res/drawable/ic_baseline_settings_150.xml" value="0.24351851851851852" />
         <entry key="..\:/programming/Java/lesson_06/app/src/main/res/drawable/ic_company_logo_24.xml" value="0.1" />
         <entry key="..\:/programming/Java/lesson_06/app/src/main/res/drawable/view_background.xml" value="0.22037037037037038" />
-        <entry key="..\:/programming/Java/lesson_06/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
+        <entry key="..\:/programming/Java/lesson_06/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/programming/Java/lesson_06/app/src/main/res/layout/old_activity_main.xml" value="0.25025641025641027" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

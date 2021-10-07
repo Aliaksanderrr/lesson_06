@@ -4,6 +4,10 @@
     <string name="password_hint">Password</string>
     <string name="register_button">Register</string>
     <string name="login_button">Login</string>
-    <string name="message_login_enpty">Login is empty</string>
+    <string name="message_login_empty">Login is empty</string>
     <string name="message_password_empty">Password is empty</string>
+    <string name="login_success">Login successful</string>
+    <string name="login_failing">Not logged in</string>
+    <string name="registration_success">Congratulations, you are a new user</string>
+    <string name="registration_failing">Sorry, something went wrong</string>
 </resources>

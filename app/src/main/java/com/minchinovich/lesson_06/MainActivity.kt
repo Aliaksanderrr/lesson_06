@@ -1,14 +1,21 @@
 package com.minchinovich.lesson_06
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.minchinovich.lesson_06.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding : ActivityMainBinding
+    private val loginSuccess by lazy { getString(R.string.login_success) }
+    private val registrationSuccess by lazy { getString(R.string.registration_success) }
+    private val loginFailing by lazy { getString(R.string.login_failing) }
+    private val registrationFailing by lazy { getString(R.string.registration_failing) }
+    private val messageLoginEmpty by lazy { getString(R.string.message_login_empty) }
+    private val messagePasswordEmpty by lazy { getString(R.string.message_password_empty) }
+
+    private lateinit var binding: ActivityMainBinding
     private lateinit var viewModel: MainActivityViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         binding.loginButton.setOnClickListener {
-            if(checkInputFields()) {
+            if (checkInputFields()) {
                 val login = binding.loginEditText.text.toString().trim()
                 val password = binding.passwordEditText.text.toString()
                 loginAction(viewModel.checkUser(login, password))
@@ -29,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         binding.registerButton.setOnClickListener {
-            if(checkInputFields()) {
+            if (checkInputFields()) {
                 val login = binding.loginEditText.text.toString().trim()
                 val password = binding.passwordEditText.text.toString()
                 registrationAction(viewModel.registerUser(login, password))
@@ -37,33 +44,33 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun checkInputFields(): Boolean{
-        if (binding.loginEditText.text.toString().trim().isNullOrEmpty()){
-            binding.loginEditText.error = getString(R.string.message_login_enpty)
+    private fun checkInputFields(): Boolean {
+        if (binding.loginEditText.text.toString().trim().isEmpty()) {
+            binding.loginEditText.error = messageLoginEmpty
             binding.loginEditText.requestFocus()
             return false
         }
-        if (binding.passwordEditText.text.toString().isNullOrEmpty()){
-            binding.passwordEditText.error = getString(R.string.message_password_empty)
+        if (binding.passwordEditText.text.toString().isEmpty()) {
+            binding.passwordEditText.error = messagePasswordEmpty
             binding.passwordEditText.requestFocus()
             return false
         }
         return true
     }
 
-    private fun loginAction(isSuccessful: Boolean){
-        if (isSuccessful){
-            Toast.makeText(this, "Login successful", Toast.LENGTH_SHORT).show()
-        } else{
-            Toast.makeText(this, "Not logged in", Toast.LENGTH_SHORT).show()
+    private fun loginAction(isSuccessful: Boolean) {
+        if (isSuccessful) {
+            Toast.makeText(this, loginSuccess, Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, loginFailing, Toast.LENGTH_SHORT).show()
         }
     }
 
-    private fun registrationAction(isSuccessful: Boolean){
-        if (isSuccessful){
-            Toast.makeText(this, "Congratulations, you are a new user", Toast.LENGTH_SHORT).show()
-        } else{
-            Toast.makeText(this, "Sorry, something went wrong", Toast.LENGTH_SHORT).show()
+    private fun registrationAction(isSuccessful: Boolean) {
+        if (isSuccessful) {
+            Toast.makeText(this, registrationSuccess, Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, registrationFailing, Toast.LENGTH_SHORT).show()
         }
     }
 }
